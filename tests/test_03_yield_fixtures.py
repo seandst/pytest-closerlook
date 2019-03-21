@@ -30,3 +30,16 @@ def test_yield_finally(yield_finally):
 
 def test_finally_ran():
     assert finally_ran
+
+
+# I was asked what happens if you yield more than once, and I actually have no
+# idea. Let's see!
+@pytest.fixture
+def yield_twice():
+    yield 'oh'
+    yield 'no'
+
+
+@pytest.mark.xfail(reason='Yeah, pytest totally hates this.')
+def test_yield_twice(yield_twice):
+    pass
