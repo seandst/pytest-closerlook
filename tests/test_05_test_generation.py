@@ -6,7 +6,6 @@
 # readable, but in cases where the parametrization is particularly complex, you
 # may find yourself here. This example builds from the previous example, which
 # stacked parametrized fixtures to make a test matrix.
-import pytest
 
 
 def pytest_generate_tests(metafunc):

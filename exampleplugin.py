@@ -5,6 +5,7 @@ import pytest
 
 marked_tests = []
 
+
 @pytest.fixture
 def exampleplugin_markfixture(request):
     # the mark is applied here, and can be used by later hooks to take action
@@ -16,7 +17,7 @@ def exampleplugin_markfixture(request):
 
 
 def pytest_terminal_summary(terminalreporter, exitstatus, config):
-        terminalreporter.write_sep('*', title='exampleplugin did this!')
-        terminalreporter.write_line('The following tests used the '
-                                    'exampleplugin fixture:')
-        terminalreporter.write_line(', '.join(marked_tests))
+    terminalreporter.write_sep('*', title='exampleplugin did this!')
+    terminalreporter.write_line('The following tests used the '
+                                'exampleplugin fixture:')
+    terminalreporter.write_line(', '.join(marked_tests))

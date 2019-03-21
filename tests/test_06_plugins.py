@@ -27,6 +27,7 @@
 # project-specific testing behavior, and uses a plugin loaded from the root
 # conftest.py
 
+
 # The example plugin defines a fixture that marks tests running a specific
 # fixture, and then sifts through the end-of-testing report to print out which
 # tests were marked by the fixture.
