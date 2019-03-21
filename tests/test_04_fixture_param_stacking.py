@@ -5,6 +5,12 @@
 import pytest
 
 
+# quick example of parametrizing a test directly
+@pytest.mark.parametrize('thing', ['a', 'b', 'c'])
+def test_three_things(thing):
+    pass
+
+
 # while tests themselves can be parametrized easily enough, if you wanted to
 # parametrize multiple tests with some test matrix, you'd want to bring in a
 # parametrized fixture. "Basic" fixture parametrization can handle a single
@@ -12,6 +18,11 @@ import pytest
 @pytest.fixture(scope='session', params=['a', 'b', 'c'])
 def axis_1(request):
     return request.param
+
+
+# roughly the same as the parametrized test, should run three times
+def test_single_axis(axis_1):
+    pass
 
 
 # ...but you can also stack parametrized fixtures to create a multi-axis
